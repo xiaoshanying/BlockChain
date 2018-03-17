@@ -10,6 +10,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
@@ -73,6 +74,38 @@ public class BlockChainController {
     public BlockResult<BlockChainDO> getChain() {
         logger.info("开始获取区块链信息....");
         return blockChainService.getChain();
+    }
+
+    /**
+     * 注册节点
+     *
+     * @return
+     */
+    @RequestMapping(value = "/register.json", method = RequestMethod.GET)
+    public BlockResult register(@RequestParam String nodes) {
+        try {
+            logger.info("开始注册节点...host is:" + nodes);
+            return blockChainService.register(nodes);
+        } catch (Exception e) {
+            logger.error("注册节点出现异常");
+            return new BlockResult("9999", "节点注册出现异常");
+        }
+    }
+
+    /**
+     * 解决冲突
+     *
+     * @return
+     */
+    @RequestMapping(value = "/resolve-conflict.json", method = RequestMethod.GET)
+    public BlockResult<BlockChainDO> resolveConflict() {
+        try {
+            logger.info("冲突解决,启用共识机制....");
+            return blockChainService.resolveConflict();
+        } catch (Exception e) {
+            logger.error("启用共识机制解决冲突异常,", e);
+            return new BlockResult<>("9999", "冲突解决失败");
+        }
     }
 
 }

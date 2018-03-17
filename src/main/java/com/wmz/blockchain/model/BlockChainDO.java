@@ -4,6 +4,7 @@ import com.wmz.blockchain.utils.HashUtil;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -41,6 +42,7 @@ public class BlockChainDO implements Serializable {
     private BlockChainDO() {
         chain = new ArrayList<>();
         currentTransactions = new ArrayList<>();
+        nodes = new HashSet<>();
         //创建创世区块
         initBlockChain(100, "0");
     }

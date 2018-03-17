@@ -2519,3 +2519,386 @@ Caused by: java.lang.IllegalArgumentException: 'Content-Type' cannot contain wil
 2018-03-17 18:57:12,795 [http-nio-8089-exec-4] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - ip--127.0.0.1
 2018-03-17 18:57:12,795 [http-nio-8089-exec-4] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - QueryString--null
 2018-03-17 18:57:12,795 [http-nio-8089-exec-4] INFO  com.wmz.blockchain.controller.BlockChainController - id为:1551984f-5418-4040-901c-4fe600518053的矿工开始挖矿.....
+2018-03-17 22:25:43,027 [Thread-2] INFO  o.s.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@b59d31: startup date [Sat Mar 17 18:56:47 CST 2018]; root of context hierarchy
+2018-03-17 22:25:43,028 [Thread-2] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+2018-03-17 22:27:48,675 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.2.4.Final
+2018-03-17 22:27:53,470 [main] INFO  com.wmz.blockchain.BlockchainApplication - Starting BlockchainApplication on mhfqwmzdeMacBook-Pro.local with PID 91177 (/Users/wmz/IdeaProjects/blockchain/target/classes started by wmz in /Users/wmz/IdeaProjects/blockchain)
+2018-03-17 22:27:53,471 [main] INFO  com.wmz.blockchain.BlockchainApplication - The following profiles are active: dev
+2018-03-17 22:27:53,497 [main] INFO  o.s.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@4ba2ca36: startup date [Sat Mar 17 22:27:53 CST 2018]; root of context hierarchy
+2018-03-17 22:27:54,137 [main] INFO  org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 8089 (http)
+2018-03-17 22:27:54,145 [main] INFO  org.apache.catalina.core.StandardService - Starting service Tomcat
+2018-03-17 22:27:54,145 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.0.36
+2018-03-17 22:27:54,188 [localhost-startStop-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2018-03-17 22:27:54,188 [localhost-startStop-1] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 691 ms
+2018-03-17 22:27:54,340 [localhost-startStop-1] INFO  org.springframework.boot.context.embedded.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+2018-03-17 22:27:54,346 [localhost-startStop-1] INFO  org.springframework.boot.context.embedded.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-03-17 22:27:54,346 [localhost-startStop-1] INFO  org.springframework.boot.context.embedded.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-03-17 22:27:54,346 [localhost-startStop-1] INFO  org.springframework.boot.context.embedded.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-03-17 22:27:54,347 [localhost-startStop-1] INFO  org.springframework.boot.context.embedded.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2018-03-17 22:27:54,529 [main] INFO  o.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@4ba2ca36: startup date [Sat Mar 17 22:27:53 CST 2018]; root of context hierarchy
+2018-03-17 22:27:54,562 [main] INFO  o.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped "{[/block-chain/register.json],methods=[GET]}" onto public com.wmz.blockchain.model.BlockResult com.wmz.blockchain.controller.BlockChainController.register(javax.servlet.http.HttpServletRequest)
+2018-03-17 22:27:54,563 [main] INFO  o.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped "{[/block-chain/transaction/new.json],methods=[POST]}" onto public com.wmz.blockchain.model.BlockResult com.wmz.blockchain.controller.BlockChainController.newTransaction(com.wmz.blockchain.model.TransactionDO)
+2018-03-17 22:27:54,563 [main] INFO  o.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped "{[/block-chain/mine.json],methods=[POST]}" onto public com.wmz.blockchain.model.BlockResult<com.wmz.blockchain.model.BlockDO> com.wmz.blockchain.controller.BlockChainController.mine(javax.servlet.http.HttpServletRequest)
+2018-03-17 22:27:54,563 [main] INFO  o.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped "{[/block-chain/get-chain.json],methods=[GET]}" onto public com.wmz.blockchain.model.BlockResult<com.wmz.blockchain.model.BlockChainDO> com.wmz.blockchain.controller.BlockChainController.getChain()
+2018-03-17 22:27:54,563 [main] INFO  o.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped "{[/block-chain/resolve-conflict.json],methods=[GET]}" onto public com.wmz.blockchain.model.BlockResult<com.wmz.blockchain.model.BlockChainDO> com.wmz.blockchain.controller.BlockChainController.resolveConflict()
+2018-03-17 22:27:54,565 [main] INFO  o.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-03-17 22:27:54,565 [main] INFO  o.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-03-17 22:27:54,578 [main] INFO  org.springframework.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-03-17 22:27:54,580 [main] INFO  org.springframework.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-03-17 22:27:54,599 [main] INFO  org.springframework.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-03-17 22:27:54,653 [main] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2018-03-17 22:27:54,670 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8089"]
+2018-03-17 22:27:54,673 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8089"]
+2018-03-17 22:27:54,691 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2018-03-17 22:27:54,701 [main] INFO  org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer - Tomcat started on port(s): 8089 (http)
+2018-03-17 22:27:54,705 [main] INFO  com.wmz.blockchain.BlockchainApplication - Started BlockchainApplication in 21.489 seconds (JVM running for 21.771)
+2018-03-17 22:29:46,418 [Thread-2] INFO  o.s.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@4ba2ca36: startup date [Sat Mar 17 22:27:53 CST 2018]; root of context hierarchy
+2018-03-17 22:29:46,420 [Thread-2] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+2018-03-17 22:48:28,343 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.2.4.Final
+2018-03-17 22:48:33,129 [main] INFO  com.wmz.blockchain.BlockchainApplication - Starting BlockchainApplication on mhfqwmzdeMacBook-Pro.local with PID 92216 (/Users/wmz/IdeaProjects/blockchain/target/classes started by wmz in /Users/wmz/IdeaProjects/blockchain)
+2018-03-17 22:48:33,130 [main] INFO  com.wmz.blockchain.BlockchainApplication - The following profiles are active: dev
+2018-03-17 22:48:33,161 [main] INFO  o.s.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@4ba2ca36: startup date [Sat Mar 17 22:48:33 CST 2018]; root of context hierarchy
+2018-03-17 22:48:33,866 [main] INFO  org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 8066 (http)
+2018-03-17 22:48:33,875 [main] INFO  org.apache.catalina.core.StandardService - Starting service Tomcat
+2018-03-17 22:48:33,876 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.0.36
+2018-03-17 22:48:33,926 [localhost-startStop-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2018-03-17 22:48:33,926 [localhost-startStop-1] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 765 ms
+2018-03-17 22:48:34,086 [localhost-startStop-1] INFO  org.springframework.boot.context.embedded.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+2018-03-17 22:48:34,094 [localhost-startStop-1] INFO  org.springframework.boot.context.embedded.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-03-17 22:48:34,094 [localhost-startStop-1] INFO  org.springframework.boot.context.embedded.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-03-17 22:48:34,094 [localhost-startStop-1] INFO  org.springframework.boot.context.embedded.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-03-17 22:48:34,094 [localhost-startStop-1] INFO  org.springframework.boot.context.embedded.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2018-03-17 22:48:34,288 [main] INFO  o.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@4ba2ca36: startup date [Sat Mar 17 22:48:33 CST 2018]; root of context hierarchy
+2018-03-17 22:48:34,328 [main] INFO  o.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped "{[/block-chain/register.json],methods=[GET]}" onto public com.wmz.blockchain.model.BlockResult com.wmz.blockchain.controller.BlockChainController.register(java.lang.String)
+2018-03-17 22:48:34,328 [main] INFO  o.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped "{[/block-chain/mine.json],methods=[POST]}" onto public com.wmz.blockchain.model.BlockResult<com.wmz.blockchain.model.BlockDO> com.wmz.blockchain.controller.BlockChainController.mine(javax.servlet.http.HttpServletRequest)
+2018-03-17 22:48:34,329 [main] INFO  o.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped "{[/block-chain/transaction/new.json],methods=[POST]}" onto public com.wmz.blockchain.model.BlockResult com.wmz.blockchain.controller.BlockChainController.newTransaction(com.wmz.blockchain.model.TransactionDO)
+2018-03-17 22:48:34,329 [main] INFO  o.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped "{[/block-chain/get-chain.json],methods=[GET]}" onto public com.wmz.blockchain.model.BlockResult<com.wmz.blockchain.model.BlockChainDO> com.wmz.blockchain.controller.BlockChainController.getChain()
+2018-03-17 22:48:34,329 [main] INFO  o.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped "{[/block-chain/resolve-conflict.json],methods=[GET]}" onto public com.wmz.blockchain.model.BlockResult<com.wmz.blockchain.model.BlockChainDO> com.wmz.blockchain.controller.BlockChainController.resolveConflict()
+2018-03-17 22:48:34,330 [main] INFO  o.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-03-17 22:48:34,331 [main] INFO  o.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-03-17 22:48:34,348 [main] INFO  org.springframework.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-03-17 22:48:34,348 [main] INFO  org.springframework.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-03-17 22:48:34,367 [main] INFO  org.springframework.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-03-17 22:48:34,422 [main] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2018-03-17 22:48:34,441 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8066"]
+2018-03-17 22:48:34,445 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8066"]
+2018-03-17 22:48:34,464 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2018-03-17 22:48:34,472 [main] INFO  org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer - Tomcat started on port(s): 8066 (http)
+2018-03-17 22:48:34,476 [main] INFO  com.wmz.blockchain.BlockchainApplication - Started BlockchainApplication in 21.595 seconds (JVM running for 21.934)
+2018-03-17 22:49:03,035 [http-nio-8066-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-03-17 22:49:03,035 [http-nio-8066-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+2018-03-17 22:49:03,043 [http-nio-8066-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 8 ms
+2018-03-17 22:49:03,053 [http-nio-8066-exec-1] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--cache-control: no-cache
+2018-03-17 22:49:03,053 [http-nio-8066-exec-1] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--postman-token: 311aef80-a1fe-42b2-b224-8afea2a0da18
+2018-03-17 22:49:03,053 [http-nio-8066-exec-1] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--content-type: application/json
+2018-03-17 22:49:03,053 [http-nio-8066-exec-1] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--user-agent: PostmanRuntime/3.0.11-hotfix.2
+2018-03-17 22:49:03,053 [http-nio-8066-exec-1] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--accept: */*
+2018-03-17 22:49:03,053 [http-nio-8066-exec-1] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--host: 127.0.0.1:8066
+2018-03-17 22:49:03,053 [http-nio-8066-exec-1] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--accept-encoding: gzip, deflate
+2018-03-17 22:49:03,054 [http-nio-8066-exec-1] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--connection: keep-alive
+2018-03-17 22:49:03,054 [http-nio-8066-exec-1] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - url--http://127.0.0.1:8066/block-chain/get-chain.json
+2018-03-17 22:49:03,054 [http-nio-8066-exec-1] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - ip--127.0.0.1
+2018-03-17 22:49:03,054 [http-nio-8066-exec-1] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - QueryString--null
+2018-03-17 22:49:03,059 [http-nio-8066-exec-1] INFO  com.wmz.blockchain.controller.BlockChainController - 开始获取区块链信息....
+2018-03-17 22:49:03,070 [http-nio-8066-exec-1] INFO  com.wmz.blockchain.service.BlockChainService - chain info is:{"chain":[{"index":1,"previousHash":"0","proof":100,"timestamp":1521298143059,"transactions":[]}],"currentTransactions":[],"nodes":[]}
+2018-03-17 22:49:57,077 [http-nio-8066-exec-2] WARN  org.springframework.web.servlet.PageNotFound - Request method 'POST' not supported
+2018-03-17 22:49:57,080 [http-nio-8066-exec-2] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--cache-control: no-cache
+2018-03-17 22:49:57,080 [http-nio-8066-exec-2] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--postman-token: 93060e42-7efc-49d7-ab7e-59c3e438a591
+2018-03-17 22:49:57,080 [http-nio-8066-exec-2] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--content-type: multipart/form-data; boundary=--------------------------754192012316224131000342
+2018-03-17 22:49:57,080 [http-nio-8066-exec-2] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--user-agent: PostmanRuntime/3.0.11-hotfix.2
+2018-03-17 22:49:57,080 [http-nio-8066-exec-2] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--accept: */*
+2018-03-17 22:49:57,081 [http-nio-8066-exec-2] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--host: 127.0.0.1:8066
+2018-03-17 22:49:57,081 [http-nio-8066-exec-2] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--accept-encoding: gzip, deflate
+2018-03-17 22:49:57,081 [http-nio-8066-exec-2] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--content-length: 181
+2018-03-17 22:49:57,081 [http-nio-8066-exec-2] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--connection: keep-alive
+2018-03-17 22:49:57,081 [http-nio-8066-exec-2] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - url--http://127.0.0.1:8066/error
+2018-03-17 22:49:57,081 [http-nio-8066-exec-2] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - ip--127.0.0.1
+2018-03-17 22:49:57,081 [http-nio-8066-exec-2] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - body--nodes: http://127.0.0.1:8089
+2018-03-17 22:49:57,081 [http-nio-8066-exec-2] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - QueryString--null
+2018-03-17 22:50:24,547 [http-nio-8066-exec-3] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--cache-control: no-cache
+2018-03-17 22:50:24,548 [http-nio-8066-exec-3] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--postman-token: 15a81b76-ab6f-45d6-af6f-363352d27360
+2018-03-17 22:50:24,548 [http-nio-8066-exec-3] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--content-type: application/json
+2018-03-17 22:50:24,548 [http-nio-8066-exec-3] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--user-agent: PostmanRuntime/3.0.11-hotfix.2
+2018-03-17 22:50:24,548 [http-nio-8066-exec-3] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--accept: */*
+2018-03-17 22:50:24,548 [http-nio-8066-exec-3] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--host: 127.0.0.1:8066
+2018-03-17 22:50:24,548 [http-nio-8066-exec-3] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--accept-encoding: gzip, deflate
+2018-03-17 22:50:24,548 [http-nio-8066-exec-3] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--connection: keep-alive
+2018-03-17 22:50:24,548 [http-nio-8066-exec-3] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - url--http://127.0.0.1:8066/block-chain/register.json
+2018-03-17 22:50:24,548 [http-nio-8066-exec-3] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - ip--127.0.0.1
+2018-03-17 22:50:24,548 [http-nio-8066-exec-3] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - body--nodes: http://127.0.0.1:8089
+2018-03-17 22:50:24,548 [http-nio-8066-exec-3] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - QueryString--nodes=http://127.0.0.1:8089
+2018-03-17 22:50:24,552 [http-nio-8066-exec-3] INFO  com.wmz.blockchain.controller.BlockChainController - 开始注册节点...host is:http://127.0.0.1:8089
+2018-03-17 22:50:49,919 [http-nio-8066-exec-4] WARN  org.springframework.web.servlet.PageNotFound - Request method 'POST' not supported
+2018-03-17 22:50:49,920 [http-nio-8066-exec-4] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--cache-control: no-cache
+2018-03-17 22:50:49,920 [http-nio-8066-exec-4] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--postman-token: f8e52e35-9d62-4e7c-80c7-63aef8a4d081
+2018-03-17 22:50:49,920 [http-nio-8066-exec-4] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--content-type: multipart/form-data; boundary=--------------------------520920470035640222959012
+2018-03-17 22:50:49,921 [http-nio-8066-exec-4] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--user-agent: PostmanRuntime/3.0.11-hotfix.2
+2018-03-17 22:50:49,921 [http-nio-8066-exec-4] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--accept: */*
+2018-03-17 22:50:49,921 [http-nio-8066-exec-4] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--host: 127.0.0.1:8066
+2018-03-17 22:50:49,921 [http-nio-8066-exec-4] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--accept-encoding: gzip, deflate
+2018-03-17 22:50:49,921 [http-nio-8066-exec-4] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--content-length: 181
+2018-03-17 22:50:49,921 [http-nio-8066-exec-4] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--connection: keep-alive
+2018-03-17 22:50:49,921 [http-nio-8066-exec-4] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - url--http://127.0.0.1:8066/error
+2018-03-17 22:50:49,921 [http-nio-8066-exec-4] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - ip--127.0.0.1
+2018-03-17 22:50:49,921 [http-nio-8066-exec-4] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - body--nodes: http://127.0.0.1:8089
+2018-03-17 22:50:49,921 [http-nio-8066-exec-4] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - QueryString--null
+2018-03-17 22:50:57,583 [http-nio-8066-exec-5] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--cache-control: no-cache
+2018-03-17 22:50:57,583 [http-nio-8066-exec-5] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--postman-token: 774cc10a-7259-4148-aa9a-02a6bedc7e19
+2018-03-17 22:50:57,584 [http-nio-8066-exec-5] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--content-type: application/json
+2018-03-17 22:50:57,584 [http-nio-8066-exec-5] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--user-agent: PostmanRuntime/3.0.11-hotfix.2
+2018-03-17 22:50:57,584 [http-nio-8066-exec-5] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--accept: */*
+2018-03-17 22:50:57,584 [http-nio-8066-exec-5] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--host: 127.0.0.1:8066
+2018-03-17 22:50:57,584 [http-nio-8066-exec-5] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--accept-encoding: gzip, deflate
+2018-03-17 22:50:57,584 [http-nio-8066-exec-5] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--connection: keep-alive
+2018-03-17 22:50:57,584 [http-nio-8066-exec-5] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - url--http://127.0.0.1:8066/block-chain/get-chain.json
+2018-03-17 22:50:57,584 [http-nio-8066-exec-5] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - ip--127.0.0.1
+2018-03-17 22:50:57,584 [http-nio-8066-exec-5] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - QueryString--null
+2018-03-17 22:50:57,584 [http-nio-8066-exec-5] INFO  com.wmz.blockchain.controller.BlockChainController - 开始获取区块链信息....
+2018-03-17 22:50:57,584 [http-nio-8066-exec-5] INFO  com.wmz.blockchain.service.BlockChainService - chain info is:{"chain":[{"index":1,"previousHash":"0","proof":100,"timestamp":1521298143059,"transactions":[]}],"currentTransactions":[],"nodes":["127.0.0.1:8089"]}
+2018-03-17 22:51:19,356 [http-nio-8066-exec-6] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--cache-control: no-cache
+2018-03-17 22:51:19,357 [http-nio-8066-exec-6] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--postman-token: 7a014f6d-07d9-4b45-a56b-2e2b6e2bc425
+2018-03-17 22:51:19,357 [http-nio-8066-exec-6] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--content-type: application/json
+2018-03-17 22:51:19,357 [http-nio-8066-exec-6] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--user-agent: PostmanRuntime/3.0.11-hotfix.2
+2018-03-17 22:51:19,357 [http-nio-8066-exec-6] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--accept: */*
+2018-03-17 22:51:19,357 [http-nio-8066-exec-6] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--host: 127.0.0.1:8066
+2018-03-17 22:51:19,357 [http-nio-8066-exec-6] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--accept-encoding: gzip, deflate
+2018-03-17 22:51:19,357 [http-nio-8066-exec-6] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--connection: keep-alive
+2018-03-17 22:51:19,357 [http-nio-8066-exec-6] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - url--http://127.0.0.1:8066/block-chain/get-chain.json
+2018-03-17 22:51:19,357 [http-nio-8066-exec-6] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - ip--127.0.0.1
+2018-03-17 22:51:19,357 [http-nio-8066-exec-6] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - QueryString--null
+2018-03-17 22:51:19,357 [http-nio-8066-exec-6] INFO  com.wmz.blockchain.controller.BlockChainController - 开始获取区块链信息....
+2018-03-17 22:51:19,357 [http-nio-8066-exec-6] INFO  com.wmz.blockchain.service.BlockChainService - chain info is:{"chain":[{"index":1,"previousHash":"0","proof":100,"timestamp":1521298143059,"transactions":[]}],"currentTransactions":[],"nodes":["127.0.0.1:8089"]}
+2018-03-17 22:52:13,469 [http-nio-8066-exec-7] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--cache-control: no-cache
+2018-03-17 22:52:13,470 [http-nio-8066-exec-7] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--postman-token: f40f6c6d-6b35-443e-9381-34e8fb42bf70
+2018-03-17 22:52:13,470 [http-nio-8066-exec-7] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--content-type: application/json
+2018-03-17 22:52:13,470 [http-nio-8066-exec-7] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--user-agent: PostmanRuntime/3.0.11-hotfix.2
+2018-03-17 22:52:13,470 [http-nio-8066-exec-7] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--accept: */*
+2018-03-17 22:52:13,470 [http-nio-8066-exec-7] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--host: 127.0.0.1:8066
+2018-03-17 22:52:13,470 [http-nio-8066-exec-7] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--accept-encoding: gzip, deflate
+2018-03-17 22:52:13,470 [http-nio-8066-exec-7] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--connection: keep-alive
+2018-03-17 22:52:13,470 [http-nio-8066-exec-7] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - url--http://127.0.0.1:8066/block-chain/get-chain.json
+2018-03-17 22:52:13,470 [http-nio-8066-exec-7] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - ip--127.0.0.1
+2018-03-17 22:52:13,470 [http-nio-8066-exec-7] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - QueryString--null
+2018-03-17 22:52:13,470 [http-nio-8066-exec-7] INFO  com.wmz.blockchain.controller.BlockChainController - 开始获取区块链信息....
+2018-03-17 22:52:13,470 [http-nio-8066-exec-7] INFO  com.wmz.blockchain.service.BlockChainService - chain info is:{"chain":[{"index":1,"previousHash":"0","proof":100,"timestamp":1521298143059,"transactions":[]}],"currentTransactions":[],"nodes":["127.0.0.1:8089"]}
+2018-03-17 22:52:43,953 [http-nio-8066-exec-8] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--cache-control: no-cache
+2018-03-17 22:52:43,953 [http-nio-8066-exec-8] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--postman-token: a38e258d-0e4a-44f1-a2f6-1adbcfd58dba
+2018-03-17 22:52:43,954 [http-nio-8066-exec-8] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--content-type: application/json
+2018-03-17 22:52:43,954 [http-nio-8066-exec-8] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--user-agent: PostmanRuntime/3.0.11-hotfix.2
+2018-03-17 22:52:43,954 [http-nio-8066-exec-8] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--accept: */*
+2018-03-17 22:52:43,954 [http-nio-8066-exec-8] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--host: 127.0.0.1:8066
+2018-03-17 22:52:43,954 [http-nio-8066-exec-8] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--accept-encoding: gzip, deflate
+2018-03-17 22:52:43,954 [http-nio-8066-exec-8] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--connection: keep-alive
+2018-03-17 22:52:43,954 [http-nio-8066-exec-8] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - url--http://127.0.0.1:8066/block-chain/resolve-conflict.json
+2018-03-17 22:52:43,954 [http-nio-8066-exec-8] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - ip--127.0.0.1
+2018-03-17 22:52:43,954 [http-nio-8066-exec-8] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - QueryString--null
+2018-03-17 22:52:43,954 [http-nio-8066-exec-8] INFO  com.wmz.blockchain.controller.BlockChainController - 冲突解决,启用共识机制....
+2018-03-17 22:52:44,158 [http-nio-8066-exec-8] ERROR com.wmz.blockchain.controller.BlockChainController - 启用共识机制解决冲突异常,
+java.lang.ClassCastException: com.alibaba.fastjson.JSONObject cannot be cast to com.wmz.blockchain.model.BlockChainDO
+	at com.wmz.blockchain.core.BlockChainImp.resolveConflicts(BlockChainImp.java:93)
+	at com.wmz.blockchain.service.BlockChainService.resolveConflict(BlockChainService.java:101)
+	at com.wmz.blockchain.controller.BlockChainController.resolveConflict(BlockChainController.java:104)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:221)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:136)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:110)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:832)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:743)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:961)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:895)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:967)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:858)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:622)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:843)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:292)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:240)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:240)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:87)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:240)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:77)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:240)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:121)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:240)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:212)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:106)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:502)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:141)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:528)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1099)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:670)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1520)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1476)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2018-03-17 22:53:51,060 [http-nio-8066-exec-9] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--cache-control: no-cache
+2018-03-17 22:53:51,060 [http-nio-8066-exec-9] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--postman-token: c16d3636-2a7c-4e2a-9abb-b7724954fd49
+2018-03-17 22:53:51,060 [http-nio-8066-exec-9] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--content-type: application/json
+2018-03-17 22:53:51,060 [http-nio-8066-exec-9] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--user-agent: PostmanRuntime/3.0.11-hotfix.2
+2018-03-17 22:53:51,060 [http-nio-8066-exec-9] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--accept: */*
+2018-03-17 22:53:51,060 [http-nio-8066-exec-9] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--host: 127.0.0.1:8066
+2018-03-17 22:53:51,060 [http-nio-8066-exec-9] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--accept-encoding: gzip, deflate
+2018-03-17 22:53:51,060 [http-nio-8066-exec-9] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--connection: keep-alive
+2018-03-17 22:53:51,061 [http-nio-8066-exec-9] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - url--http://127.0.0.1:8066/block-chain/get-chain.json
+2018-03-17 22:53:51,061 [http-nio-8066-exec-9] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - ip--127.0.0.1
+2018-03-17 22:53:51,061 [http-nio-8066-exec-9] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - QueryString--null
+2018-03-17 22:53:51,061 [http-nio-8066-exec-9] INFO  com.wmz.blockchain.controller.BlockChainController - 开始获取区块链信息....
+2018-03-17 22:53:51,061 [http-nio-8066-exec-9] INFO  com.wmz.blockchain.service.BlockChainService - chain info is:{"chain":[{"index":1,"previousHash":"0","proof":100,"timestamp":1521298143059,"transactions":[]}],"currentTransactions":[],"nodes":["127.0.0.1:8089"]}
+2018-03-17 22:57:38,232 [Thread-2] INFO  o.s.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@4ba2ca36: startup date [Sat Mar 17 22:48:33 CST 2018]; root of context hierarchy
+2018-03-17 22:57:38,233 [Thread-2] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+2018-03-17 22:59:07,142 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.2.4.Final
+2018-03-17 22:59:11,918 [main] INFO  com.wmz.blockchain.BlockchainApplication - Starting BlockchainApplication on mhfqwmzdeMacBook-Pro.local with PID 92525 (/Users/wmz/IdeaProjects/blockchain/target/classes started by wmz in /Users/wmz/IdeaProjects/blockchain)
+2018-03-17 22:59:11,919 [main] INFO  com.wmz.blockchain.BlockchainApplication - The following profiles are active: dev
+2018-03-17 22:59:11,944 [main] INFO  o.s.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@4ba2ca36: startup date [Sat Mar 17 22:59:11 CST 2018]; root of context hierarchy
+2018-03-17 22:59:12,592 [main] INFO  org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 8089 (http)
+2018-03-17 22:59:12,600 [main] INFO  org.apache.catalina.core.StandardService - Starting service Tomcat
+2018-03-17 22:59:12,601 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.0.36
+2018-03-17 22:59:12,648 [localhost-startStop-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2018-03-17 22:59:12,648 [localhost-startStop-1] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 704 ms
+2018-03-17 22:59:12,801 [localhost-startStop-1] INFO  org.springframework.boot.context.embedded.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+2018-03-17 22:59:12,807 [localhost-startStop-1] INFO  org.springframework.boot.context.embedded.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-03-17 22:59:12,808 [localhost-startStop-1] INFO  org.springframework.boot.context.embedded.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-03-17 22:59:12,808 [localhost-startStop-1] INFO  org.springframework.boot.context.embedded.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-03-17 22:59:12,808 [localhost-startStop-1] INFO  org.springframework.boot.context.embedded.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2018-03-17 22:59:12,996 [main] INFO  o.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@4ba2ca36: startup date [Sat Mar 17 22:59:11 CST 2018]; root of context hierarchy
+2018-03-17 22:59:13,032 [main] INFO  o.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped "{[/block-chain/register.json],methods=[GET]}" onto public com.wmz.blockchain.model.BlockResult com.wmz.blockchain.controller.BlockChainController.register(java.lang.String)
+2018-03-17 22:59:13,032 [main] INFO  o.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped "{[/block-chain/transaction/new.json],methods=[POST]}" onto public com.wmz.blockchain.model.BlockResult com.wmz.blockchain.controller.BlockChainController.newTransaction(com.wmz.blockchain.model.TransactionDO)
+2018-03-17 22:59:13,033 [main] INFO  o.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped "{[/block-chain/mine.json],methods=[POST]}" onto public com.wmz.blockchain.model.BlockResult<com.wmz.blockchain.model.BlockDO> com.wmz.blockchain.controller.BlockChainController.mine(javax.servlet.http.HttpServletRequest)
+2018-03-17 22:59:13,033 [main] INFO  o.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped "{[/block-chain/get-chain.json],methods=[GET]}" onto public com.wmz.blockchain.model.BlockResult<com.wmz.blockchain.model.BlockChainDO> com.wmz.blockchain.controller.BlockChainController.getChain()
+2018-03-17 22:59:13,033 [main] INFO  o.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped "{[/block-chain/resolve-conflict.json],methods=[GET]}" onto public com.wmz.blockchain.model.BlockResult<com.wmz.blockchain.model.BlockChainDO> com.wmz.blockchain.controller.BlockChainController.resolveConflict()
+2018-03-17 22:59:13,034 [main] INFO  o.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-03-17 22:59:13,035 [main] INFO  o.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-03-17 22:59:13,049 [main] INFO  org.springframework.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-03-17 22:59:13,049 [main] INFO  org.springframework.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-03-17 22:59:13,069 [main] INFO  org.springframework.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-03-17 22:59:13,124 [main] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2018-03-17 22:59:13,141 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8089"]
+2018-03-17 22:59:13,144 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8089"]
+2018-03-17 22:59:13,162 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2018-03-17 22:59:13,170 [main] INFO  org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer - Tomcat started on port(s): 8089 (http)
+2018-03-17 22:59:13,174 [main] INFO  com.wmz.blockchain.BlockchainApplication - Started BlockchainApplication in 21.514 seconds (JVM running for 21.813)
+2018-03-17 22:59:30,659 [http-nio-8089-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-03-17 22:59:30,660 [http-nio-8089-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+2018-03-17 22:59:30,667 [http-nio-8089-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 7 ms
+2018-03-17 22:59:30,677 [http-nio-8089-exec-1] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--cache-control: no-cache
+2018-03-17 22:59:30,678 [http-nio-8089-exec-1] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--postman-token: 4c360ea5-947a-47e8-b61a-9c74af450460
+2018-03-17 22:59:30,678 [http-nio-8089-exec-1] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--content-type: application/json
+2018-03-17 22:59:30,678 [http-nio-8089-exec-1] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--user-agent: PostmanRuntime/3.0.11-hotfix.2
+2018-03-17 22:59:30,678 [http-nio-8089-exec-1] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--accept: */*
+2018-03-17 22:59:30,678 [http-nio-8089-exec-1] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--host: 127.0.0.1:8089
+2018-03-17 22:59:30,678 [http-nio-8089-exec-1] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--accept-encoding: gzip, deflate
+2018-03-17 22:59:30,678 [http-nio-8089-exec-1] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--connection: keep-alive
+2018-03-17 22:59:30,678 [http-nio-8089-exec-1] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - url--http://127.0.0.1:8089/block-chain/get-chain.json
+2018-03-17 22:59:30,679 [http-nio-8089-exec-1] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - ip--127.0.0.1
+2018-03-17 22:59:30,679 [http-nio-8089-exec-1] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - QueryString--null
+2018-03-17 22:59:30,684 [http-nio-8089-exec-1] INFO  com.wmz.blockchain.controller.BlockChainController - 开始获取区块链信息....
+2018-03-17 22:59:30,695 [http-nio-8089-exec-1] INFO  com.wmz.blockchain.service.BlockChainService - chain info is:{"chain":[{"index":1,"previousHash":"0","proof":100,"timestamp":1521298770684,"transactions":[]}],"currentTransactions":[],"nodes":[]}
+2018-03-17 22:59:46,227 [http-nio-8089-exec-2] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--cache-control: no-cache
+2018-03-17 22:59:46,227 [http-nio-8089-exec-2] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--postman-token: ac59a31b-6d25-426c-b562-05deb31130f4
+2018-03-17 22:59:46,227 [http-nio-8089-exec-2] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--content-type: application/json
+2018-03-17 22:59:46,227 [http-nio-8089-exec-2] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--user-agent: PostmanRuntime/3.0.11-hotfix.2
+2018-03-17 22:59:46,227 [http-nio-8089-exec-2] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--accept: */*
+2018-03-17 22:59:46,227 [http-nio-8089-exec-2] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--host: 127.0.0.1:8089
+2018-03-17 22:59:46,228 [http-nio-8089-exec-2] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--accept-encoding: gzip, deflate
+2018-03-17 22:59:46,228 [http-nio-8089-exec-2] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--connection: keep-alive
+2018-03-17 22:59:46,228 [http-nio-8089-exec-2] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - url--http://127.0.0.1:8089/block-chain/register.json
+2018-03-17 22:59:46,228 [http-nio-8089-exec-2] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - ip--127.0.0.1
+2018-03-17 22:59:46,228 [http-nio-8089-exec-2] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - body--nodes: http://127.0.0.1:8066
+2018-03-17 22:59:46,228 [http-nio-8089-exec-2] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - QueryString--nodes=http://127.0.0.1:8066
+2018-03-17 22:59:46,232 [http-nio-8089-exec-2] INFO  com.wmz.blockchain.controller.BlockChainController - 开始注册节点...host is:http://127.0.0.1:8066
+2018-03-17 22:59:54,750 [http-nio-8089-exec-3] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--cache-control: no-cache
+2018-03-17 22:59:54,750 [http-nio-8089-exec-3] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--postman-token: 32a1bc09-995a-42c1-a223-19f2bd38461d
+2018-03-17 22:59:54,750 [http-nio-8089-exec-3] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--content-type: multipart/form-data; boundary=--------------------------467979410507639869922890
+2018-03-17 22:59:54,751 [http-nio-8089-exec-3] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--user-agent: PostmanRuntime/3.0.11-hotfix.2
+2018-03-17 22:59:54,751 [http-nio-8089-exec-3] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--accept: */*
+2018-03-17 22:59:54,751 [http-nio-8089-exec-3] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--host: 127.0.0.1:8089
+2018-03-17 22:59:54,751 [http-nio-8089-exec-3] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--accept-encoding: gzip, deflate
+2018-03-17 22:59:54,751 [http-nio-8089-exec-3] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--content-length: 387
+2018-03-17 22:59:54,751 [http-nio-8089-exec-3] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--connection: keep-alive
+2018-03-17 22:59:54,751 [http-nio-8089-exec-3] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - url--http://127.0.0.1:8089/block-chain/transaction/new.json
+2018-03-17 22:59:54,751 [http-nio-8089-exec-3] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - ip--127.0.0.1
+2018-03-17 22:59:54,751 [http-nio-8089-exec-3] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - body--sender: wmz111
+2018-03-17 22:59:54,751 [http-nio-8089-exec-3] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - body--receiver: wmz222
+2018-03-17 22:59:54,751 [http-nio-8089-exec-3] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - body--amount: 11
+2018-03-17 22:59:54,751 [http-nio-8089-exec-3] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - QueryString--null
+2018-03-17 22:59:54,755 [http-nio-8089-exec-3] INFO  com.wmz.blockchain.controller.BlockChainController - 开始处理此比交易...,req is:TransactionDO{sender='wmz111', receiver='wmz222', amount=11.0}
+2018-03-17 22:59:54,755 [http-nio-8089-exec-3] INFO  com.wmz.blockchain.service.BlockChainService - nextIndex is:2
+2018-03-17 22:59:58,221 [http-nio-8089-exec-4] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--cache-control: no-cache
+2018-03-17 22:59:58,221 [http-nio-8089-exec-4] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--postman-token: 0f1bdf34-dcd3-4ed4-b191-33577e6eb73b
+2018-03-17 22:59:58,222 [http-nio-8089-exec-4] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--content-type: application/json
+2018-03-17 22:59:58,222 [http-nio-8089-exec-4] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--user-agent: PostmanRuntime/3.0.11-hotfix.2
+2018-03-17 22:59:58,222 [http-nio-8089-exec-4] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--accept: */*
+2018-03-17 22:59:58,222 [http-nio-8089-exec-4] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--host: 127.0.0.1:8089
+2018-03-17 22:59:58,222 [http-nio-8089-exec-4] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--accept-encoding: gzip, deflate
+2018-03-17 22:59:58,222 [http-nio-8089-exec-4] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--content-length: 0
+2018-03-17 22:59:58,222 [http-nio-8089-exec-4] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--connection: keep-alive
+2018-03-17 22:59:58,222 [http-nio-8089-exec-4] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - url--http://127.0.0.1:8089/block-chain/mine.json
+2018-03-17 22:59:58,222 [http-nio-8089-exec-4] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - ip--127.0.0.1
+2018-03-17 22:59:58,222 [http-nio-8089-exec-4] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - QueryString--null
+2018-03-17 22:59:58,222 [http-nio-8089-exec-4] INFO  com.wmz.blockchain.controller.BlockChainController - id为:6064d203-2e17-444a-8586-334dc7056a3b的矿工开始挖矿.....
+2018-03-17 23:00:20,557 [http-nio-8089-exec-5] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--host: 127.0.0.1:8089
+2018-03-17 23:00:20,557 [http-nio-8089-exec-5] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--connection: Keep-Alive
+2018-03-17 23:00:20,557 [http-nio-8089-exec-5] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--user-agent: Apache-HttpClient/4.5.2 (Java/1.8.0_131)
+2018-03-17 23:00:20,557 [http-nio-8089-exec-5] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--accept-encoding: gzip,deflate
+2018-03-17 23:00:20,557 [http-nio-8089-exec-5] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - url--http://127.0.0.1:8089/block-chain/get-chain.json
+2018-03-17 23:00:20,557 [http-nio-8089-exec-5] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - ip--127.0.0.1
+2018-03-17 23:00:20,557 [http-nio-8089-exec-5] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - QueryString--null
+2018-03-17 23:00:20,557 [http-nio-8089-exec-5] INFO  com.wmz.blockchain.controller.BlockChainController - 开始获取区块链信息....
+2018-03-17 23:00:20,558 [http-nio-8089-exec-5] INFO  com.wmz.blockchain.service.BlockChainService - chain info is:{"chain":[{"index":1,"previousHash":"0","proof":100,"timestamp":1521298770684,"transactions":[]},{"index":2,"previousHash":"5da86f1f3b5f0a8fcd69cd3ba50ca1d17bce870baaaf63f4295788b65f94f76b","proof":3860,"timestamp":1521298798253,"transactions":[{"amount":11.0,"receiver":"wmz222","sender":"wmz111"},{"amount":1.0,"receiver":"6064d203-2e17-444a-8586-334dc7056a3b","sender":"0"}]}],"currentTransactions":[],"nodes":["127.0.0.1:8066"]}
+2018-03-17 23:00:45,209 [http-nio-8089-exec-6] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--cache-control: no-cache
+2018-03-17 23:00:45,209 [http-nio-8089-exec-6] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--postman-token: 849fcee5-0585-4d63-a5e0-3e403c949cc5
+2018-03-17 23:00:45,209 [http-nio-8089-exec-6] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--content-type: application/json
+2018-03-17 23:00:45,210 [http-nio-8089-exec-6] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--user-agent: PostmanRuntime/3.0.11-hotfix.2
+2018-03-17 23:00:45,210 [http-nio-8089-exec-6] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--accept: */*
+2018-03-17 23:00:45,210 [http-nio-8089-exec-6] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--host: 127.0.0.1:8089
+2018-03-17 23:00:45,210 [http-nio-8089-exec-6] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--accept-encoding: gzip, deflate
+2018-03-17 23:00:45,210 [http-nio-8089-exec-6] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--connection: keep-alive
+2018-03-17 23:00:45,210 [http-nio-8089-exec-6] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - url--http://127.0.0.1:8089/block-chain/get-chain.json
+2018-03-17 23:00:45,210 [http-nio-8089-exec-6] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - ip--127.0.0.1
+2018-03-17 23:00:45,210 [http-nio-8089-exec-6] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - QueryString--null
+2018-03-17 23:00:45,210 [http-nio-8089-exec-6] INFO  com.wmz.blockchain.controller.BlockChainController - 开始获取区块链信息....
+2018-03-17 23:00:45,210 [http-nio-8089-exec-6] INFO  com.wmz.blockchain.service.BlockChainService - chain info is:{"chain":[{"index":1,"previousHash":"0","proof":100,"timestamp":1521298770684,"transactions":[]},{"index":2,"previousHash":"5da86f1f3b5f0a8fcd69cd3ba50ca1d17bce870baaaf63f4295788b65f94f76b","proof":3860,"timestamp":1521298798253,"transactions":[{"amount":11.0,"receiver":"wmz222","sender":"wmz111"},{"amount":1.0,"receiver":"6064d203-2e17-444a-8586-334dc7056a3b","sender":"0"}]}],"currentTransactions":[],"nodes":["127.0.0.1:8066"]}
+2018-03-17 23:01:20,706 [http-nio-8089-exec-7] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--host: 127.0.0.1:8089
+2018-03-17 23:01:20,706 [http-nio-8089-exec-7] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--connection: Keep-Alive
+2018-03-17 23:01:20,706 [http-nio-8089-exec-7] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--user-agent: Apache-HttpClient/4.5.2 (Java/1.8.0_131)
+2018-03-17 23:01:20,706 [http-nio-8089-exec-7] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--accept-encoding: gzip,deflate
+2018-03-17 23:01:20,707 [http-nio-8089-exec-7] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - url--http://127.0.0.1:8089/block-chain/get-chain.json
+2018-03-17 23:01:20,707 [http-nio-8089-exec-7] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - ip--127.0.0.1
+2018-03-17 23:01:20,707 [http-nio-8089-exec-7] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - QueryString--null
+2018-03-17 23:01:20,707 [http-nio-8089-exec-7] INFO  com.wmz.blockchain.controller.BlockChainController - 开始获取区块链信息....
+2018-03-17 23:01:20,707 [http-nio-8089-exec-7] INFO  com.wmz.blockchain.service.BlockChainService - chain info is:{"chain":[{"index":1,"previousHash":"0","proof":100,"timestamp":1521298770684,"transactions":[]},{"index":2,"previousHash":"5da86f1f3b5f0a8fcd69cd3ba50ca1d17bce870baaaf63f4295788b65f94f76b","proof":3860,"timestamp":1521298798253,"transactions":[{"amount":11.0,"receiver":"wmz222","sender":"wmz111"},{"amount":1.0,"receiver":"6064d203-2e17-444a-8586-334dc7056a3b","sender":"0"}]}],"currentTransactions":[],"nodes":["127.0.0.1:8066"]}
+2018-03-17 23:05:41,806 [http-nio-8089-exec-8] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--cache-control: no-cache
+2018-03-17 23:05:41,807 [http-nio-8089-exec-8] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--postman-token: 0bf681f2-0552-4998-846b-9b916542acdf
+2018-03-17 23:05:41,807 [http-nio-8089-exec-8] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--content-type: application/json
+2018-03-17 23:05:41,807 [http-nio-8089-exec-8] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--user-agent: PostmanRuntime/3.0.11-hotfix.2
+2018-03-17 23:05:41,807 [http-nio-8089-exec-8] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--accept: */*
+2018-03-17 23:05:41,807 [http-nio-8089-exec-8] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--host: 127.0.0.1:8089
+2018-03-17 23:05:41,807 [http-nio-8089-exec-8] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--accept-encoding: gzip, deflate
+2018-03-17 23:05:41,807 [http-nio-8089-exec-8] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - header--connection: keep-alive
+2018-03-17 23:05:41,807 [http-nio-8089-exec-8] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - url--http://127.0.0.1:8089/block-chain/get-chain.json
+2018-03-17 23:05:41,807 [http-nio-8089-exec-8] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - ip--127.0.0.1
+2018-03-17 23:05:41,807 [http-nio-8089-exec-8] INFO  com.wmz.blockchain.controller.WebMvcConfigurer - QueryString--null
+2018-03-17 23:05:41,808 [http-nio-8089-exec-8] INFO  com.wmz.blockchain.controller.BlockChainController - 开始获取区块链信息....
+2018-03-17 23:05:41,808 [http-nio-8089-exec-8] INFO  com.wmz.blockchain.service.BlockChainService - chain info is:{"chain":[{"index":1,"previousHash":"0","proof":100,"timestamp":1521298770684,"transactions":[]},{"index":2,"previousHash":"5da86f1f3b5f0a8fcd69cd3ba50ca1d17bce870baaaf63f4295788b65f94f76b","proof":3860,"timestamp":1521298798253,"transactions":[{"amount":11.0,"receiver":"wmz222","sender":"wmz111"},{"amount":1.0,"receiver":"6064d203-2e17-444a-8586-334dc7056a3b","sender":"0"}]}],"currentTransactions":[],"nodes":["127.0.0.1:8066"]}
+2018-03-17 23:11:26,050 [Thread-2] INFO  o.s.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@4ba2ca36: startup date [Sat Mar 17 22:59:11 CST 2018]; root of context hierarchy
+2018-03-17 23:11:26,051 [Thread-2] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown

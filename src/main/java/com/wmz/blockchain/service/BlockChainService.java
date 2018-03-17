@@ -13,6 +13,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
+import java.io.IOException;
+import java.net.MalformedURLException;
+
 /**
  * Created by wmz on 2018/3/17.
  * 区块链业务
@@ -78,6 +81,27 @@ public class BlockChainService {
         BlockChainDO blockChainDO = BlockChainDO.getInstance();
         logger.info("chain info is:" + JSONObject.toJSONString(blockChainDO));
         return new BlockResult<>(blockChainDO, "get chain success");
+    }
+
+    /**
+     * 注册节点
+     *
+     * @param nodes
+     * @return
+     * @throws MalformedURLException
+     */
+    public BlockResult register(String nodes) throws MalformedURLException {
+        BlockChainDO blockChainDO = BlockChainDO.getInstance();
+        blockChainImp.registerNode(blockChainDO, nodes);
+        return new BlockResult<>(blockChainDO.getNodes(), "New nodes have been added");
+    }
+
+    public BlockResult<BlockChainDO> resolveConflict() throws IOException {
+        BlockChainDO blockChainDO = BlockChainDO.getInstance();
+        if (blockChainImp.resolveConflicts(blockChainDO)) {
+            logger.info("解决了冲突....");
+        }
+        return new BlockResult<>(blockChainDO, "get max valid chain");
     }
 
 
