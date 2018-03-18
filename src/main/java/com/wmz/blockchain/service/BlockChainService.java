@@ -35,9 +35,10 @@ public class BlockChainService {
      *
      * @return
      */
-    public BlockResult<BlockDO> mine(String uuid) {
+    public BlockResult<BlockDO> mine(String uuid) throws IOException {
         long startTime = System.currentTimeMillis();
         BlockChainDO blockChainDO = BlockChainDO.getInstance();
+        blockChainDO = blockChainImp.resolveConflicts(blockChainDO);
         BlockDO lastBlock = blockChainImp.lastBlock(blockChainDO);
         long lastProof = lastBlock.getProof();
         long newProof = ProofOfWorkUtil.proofOfWork(lastProof);
@@ -58,7 +59,7 @@ public class BlockChainService {
      * @param req
      * @return
      */
-    public BlockResult newTransaction(TransactionDO req) {
+    public BlockResult newTransaction(TransactionDO req) throws IOException {
         if (StringUtils.isEmpty(req.getSender())
                 || StringUtils.isEmpty(req.getReceiver()) ||
                 req.getAmount() == null) {
@@ -66,6 +67,8 @@ public class BlockChainService {
         }
         long startTime = System.currentTimeMillis();
         BlockChainDO blockChainDO = BlockChainDO.getInstance();
+        //处理之前需要找到最长且有效的链
+        blockChainDO = blockChainImp.resolveConflicts(blockChainDO);
         long nextIndex = blockChainImp.generateNewTransaction(blockChainDO, req);
         logger.info("nextIndex is:" + nextIndex);
         long endTime = System.currentTimeMillis();
@@ -77,7 +80,7 @@ public class BlockChainService {
      *
      * @return
      */
-    public BlockResult<BlockChainDO> getChain() {
+    public BlockResult<BlockChainDO> getChain() throws IOException {
         BlockChainDO blockChainDO = BlockChainDO.getInstance();
         logger.info("chain info is:" + JSONObject.toJSONString(blockChainDO));
         return new BlockResult<>(blockChainDO, "get chain success");
@@ -95,14 +98,5 @@ public class BlockChainService {
         blockChainImp.registerNode(blockChainDO, nodes);
         return new BlockResult<>(blockChainDO.getNodes(), "New nodes have been added");
     }
-
-    public BlockResult<BlockChainDO> resolveConflict() throws IOException {
-        BlockChainDO blockChainDO = BlockChainDO.getInstance();
-        if (blockChainImp.resolveConflicts(blockChainDO)) {
-            logger.info("解决了冲突....");
-        }
-        return new BlockResult<>(blockChainDO, "get max valid chain");
-    }
-
 
 }

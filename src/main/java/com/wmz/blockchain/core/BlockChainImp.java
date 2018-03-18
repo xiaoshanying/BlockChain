@@ -81,32 +81,32 @@ public class BlockChainImp implements IBlockChainManager {
     }
 
     @Override
-    public boolean resolveConflicts(BlockChainDO blockChainDO) throws IOException {
+    public BlockChainDO resolveConflicts(BlockChainDO blockChainDO) throws IOException {
         Set<String> neighbours = blockChainDO.getNodes();
         BlockChainDO newChain = null;
 
         //寻找最长的区块链
         long maxLength = blockChainDO.getChain().size();
-
-        //获取并验证网络中的所有节点的区块链
-        for (String node : neighbours) {
-            String url = "http://" + node + "/block-chain/get-chain.json";
-            String result = Request.Get(url).execute().returnContent().asString();
-            JSONObject jsonObject = JSONObject.parseObject(result);
-            String chainData = jsonObject.getString("data");
-            BlockChainDO currentBlockChain = JSONObject.parseObject(chainData, BlockChainDO.class);
-            long currentChainLength = currentBlockChain.getChain().size();
-            if (currentChainLength > maxLength && validChain(currentBlockChain)) {
-                maxLength = currentChainLength;
-                newChain = currentBlockChain;
-                logger.info("达到共识,当前最长有效链是:" + JSONObject.toJSON(newChain));
+        if (neighbours != null && neighbours.size() > 0) {
+            //获取并验证网络中的所有节点的区块链
+            for (String node : neighbours) {
+                String url = "http://" + node + "/block-chain/get-chain.json";
+                String result = Request.Get(url).execute().returnContent().asString();
+                JSONObject jsonObject = JSONObject.parseObject(result);
+                String chainData = jsonObject.getString("data");
+                BlockChainDO currentBlockChain = JSONObject.parseObject(chainData, BlockChainDO.class);
+                long currentChainLength = currentBlockChain.getChain().size();
+                if (currentChainLength > maxLength && validChain(currentBlockChain)) {
+                    maxLength = currentChainLength;
+                    newChain = currentBlockChain;
+                    logger.info("达到共识,当前最长有效链是:" + JSONObject.toJSON(newChain));
+                }
             }
         }
         if (newChain != null) {
             blockChainDO = newChain;
             logger.info("解决冲突......");
-            return true;
         }
-        return false;
+        return blockChainDO;
     }
 }

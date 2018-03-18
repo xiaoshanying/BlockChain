@@ -72,8 +72,14 @@ public class BlockChainController {
      */
     @RequestMapping(value = "/get-chain.json", method = RequestMethod.GET)
     public BlockResult<BlockChainDO> getChain() {
-        logger.info("开始获取区块链信息....");
-        return blockChainService.getChain();
+        try {
+            logger.info("开始获取区块链信息....");
+            return blockChainService.getChain();
+        } catch (Exception e) {
+            logger.error("获取区块链信息出现异常,", e);
+            return new BlockResult<>("9999", "获取区块链出错");
+        }
+
     }
 
     /**
@@ -92,20 +98,5 @@ public class BlockChainController {
         }
     }
 
-    /**
-     * 解决冲突
-     *
-     * @return
-     */
-    @RequestMapping(value = "/resolve-conflict.json", method = RequestMethod.GET)
-    public BlockResult<BlockChainDO> resolveConflict() {
-        try {
-            logger.info("冲突解决,启用共识机制....");
-            return blockChainService.resolveConflict();
-        } catch (Exception e) {
-            logger.error("启用共识机制解决冲突异常,", e);
-            return new BlockResult<>("9999", "冲突解决失败");
-        }
-    }
 
 }

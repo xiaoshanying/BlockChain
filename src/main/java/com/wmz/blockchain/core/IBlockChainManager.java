@@ -71,8 +71,8 @@ public interface IBlockChainManager {
      * 否则返回false
      *
      * @param blockChainDO
-     * @return
+     * @return 最新的链
      */
-    boolean resolveConflicts(BlockChainDO blockChainDO) throws IOException;
+    BlockChainDO resolveConflicts(BlockChainDO blockChainDO) throws IOException;
 
 }
